@@ -1,0 +1,233 @@
+/*@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);*/
+body{
+		font-family: 'Roboto', sans-serif;
+		padding: 0;
+		margin: 0;
+		font-size: 16px;
+		background: #e4e2e2;
+	}
+	#main-wrap{
+		max-width: 600px;
+    	margin: 0 auto;
+    	background: #fff;
+    	margin-top: 5px;
+    	box-shadow: 0px 0px 9px #989898;
+	}
+	#m-title{
+		font-size: 20px;
+	    line-height: 24px;
+	    color: #000;
+	    font-weight: bold;
+	    padding: 8px 2%;
+	}
+	#m-desc{
+		padding: 0 2%;
+	}
+	#c-t-wrap{
+		padding: 20px 0;
+		display: inline-block;
+    	width: 100%;
+	}
+	#c-t-wrap .price{}
+	#c-t-wrap #c-t .r-m{
+		width: 100%; */
+	    display: block;
+	    text-align: right;
+	}
+	#c-t-wrap #c-t .r-m:hover{
+	    background: #bfbfbf;
+    	transition: all ease-in 0.2s;
+	}
+	.img-here{
+		    max-height: 300px;
+	    overflow: hidden;
+	    width: 100%;
+	    margin-top: -48px;
+	    display: inline-block;
+	    z-index: 90;
+	    position: relative;
+	}
+	.img-here img{
+		width: 100%;
+		max-width: 96%;
+		height: auto;
+		padding: 2px 2%;
+	}
+	.price{
+		padding: 2%;
+	    float: left;
+	    display: block;
+	    font-size: 20px;
+	    text-transform: capitalize;
+	    font-weight: bold;
+	}
+
+	#c-t{
+		width: 26%;
+		float: right;
+	    padding:2%;
+	    text-align: right;
+	}
+	.ico-n{
+		float: left;
+		    padding: 2%;
+	}
+	.icon-logo{
+		width: 100%;
+	    max-width: 50px;
+	    display: inline-block;
+	    overflow: hidden;
+	    min-height: 50px;
+	    border-radius: 50%;
+	    float: left;
+	    margin-right: 10px;
+	}
+	.icon-logo img{
+		width: 100%;
+    	max-width: 50px;
+    	overflow: hidden;
+    	min-height: 50px;
+    	background-size: cover;
+	}
+	.logo-icon-wrap{
+		padding: 10px 2%;
+		width: 96%;
+		display: flex;
+		align-items: center;
+	}
+	#icon-desc{
+		padding: 0px 10px;
+	}
+	#sp-name{
+		font-size: 18px;
+	    font-weight: 400;
+	    margin-right: 10px;
+	}
+	#added-by{
+		color: #777777;
+	    font-size: 16px;
+	}
+	#rated{
+		padding: 1px 2%;
+	}
+	#rated-counter{
+		line-height: 19px;
+	    margin-left: 14px;
+	    display: block;
+	}
+.s-wrap{
+	    float: right;
+    padding: 0 2%;
+    position: relative;
+    z-index: 95;  
+        margin-top: 12px;  
+}
+
+
+.save{
+	display: block;
+    text-indent: -9999px;
+    width: 17px;
+    height: 17px;
+    background: url(save.svg) no-repeat center;
+    background-size: 17px 17px;
+    float: left;
+    border: 1.5px solid #fb3302;
+    border-radius: 50%;
+    padding: 5px;
+        margin: 5px;
+}
+.share{
+	display: block;
+    text-indent: -9999px;
+    width: 17px;
+    height: 17px;
+    background: url(share.svg) no-repeat center;
+    background-size: 17px 17px;
+    float: left;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    padding: 5px;
+        margin: 5px;
+}
+#movies-r-e{
+	display: block;
+    float: left;
+}
+#movies-r-f{
+	display: inherit;
+    float: left;
+    margin-left: -85px;
+}
+
+fieldset, label { margin: 0; padding: 0; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+.fa-star{
+	color: #FFD700;
+}
+.fa{
+	font-size: 18px;
+	margin: 4px 2px;
+}
+
+
+.s-st{
+    display: block;
+    text-indent: -9999px;
+    width: 17px;
+    height: 17px;
+    background: url(f-star.svg);
+    background-size: 17px 17px;
+    float: left;
+}
+.e-s-st{
+    display: block;
+    text-indent: -9999px;
+    width: 17px;
+    height: 17px;
+    background: url(e-star.svg);
+    background-size: 17px 17px;
+    float: left;
+}
+@media (max-width: 600px) {
+	#main-wrap{
+    	margin: 5px;
+    }
+}

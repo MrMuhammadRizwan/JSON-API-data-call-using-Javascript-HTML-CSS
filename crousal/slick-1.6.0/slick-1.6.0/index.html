@@ -1,0 +1,122 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<script type="text/javascript">
+    var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function() {
+  	if (this.readyState == 4 && this.status == 200) {
+
+    var responseText = JSON.parse(this.responseText);
+     // console.log ("hey", responseText );
+
+    document.getElementById("m-title").innerHTML = responseText.cardTitle;
+	// document.getElementById("r-m").innerHTML = responseText.callToAction;
+    // document.getElementById("m-desc").innerHTML = responseText.cardDescription;
+    document.getElementById("sp-name").innerHTML = responseText.spName;
+    document.getElementById("rated-counter").innerHTML ="(" + responseText.numberOfReviews + ")";
+    var plans = responseText.plans;
+    document.getElementById("price").innerHTML=plans[2].planType;
+   
+
+
+
+    // price loop
+    // var plans = responseText.plans;
+    // var iterator = 0;
+    // for(iterator; iterator<plans.length; iterator++)
+    // {
+    // 	document.getElementById("price").innerHTML = document.getElementById("price").innerHTML +  '<strong>' + plans[iterator].planType +'<br/>';
+    // }
+
+    var elem = document.createElement("img");
+	elem.setAttribute("src", responseText.primaryMediaUrl);
+	elem.setAttribute("alt", "background-image");
+	document.getElementById("img-here").appendChild(elem);
+
+
+	// splogo
+	var splogo = document.createElement("img");
+	splogo.setAttribute("src", responseText.spLogo);
+	document.getElementById("icon-logo").appendChild(splogo);
+
+	//spname
+
+	
+
+	 
+	
+
+	// var HTML = "";
+	// data.forEach(function( ob ) {
+	// 	console
+	//   for(var i=0; i<5; i++) {  // We need 5 stars
+	//     var icoClass = i<ob.rating? "fa fa-star" : "fa fa-star-o"; // full or empty star?
+	//     HTML += "<i class='"+ icoClass +"'></i>"; // concatenate stars
+	//   }
+	//   HTML += " "+ ob.topReview.rating +"<br>"; // and concatenate the cool movie name
+	// });
+
+	// document.getElementById("movies2").innerHTML = HTML;
+	
+
+
+	}
+	// var data = responseText.topReview.rating;
+	var data = responseText.topReview.rating;
+	// console.log (data);
+	var a = parseInt(data);
+
+	var star ="";
+	var st='<i class="s-st"></i>';
+	for (i = 0; i < a; i++) {
+		// console.log(i);
+		star += st; 	
+	}
+	document.getElementById("movies-r-f").innerHTML = star;  
+
+	var estar ="";
+    var est='<i class="e-s-st"></i>';
+	for (i = 1; i <= 5; i++) {
+		estar += est;
+	}
+	document.getElementById("movies-r-e").innerHTML = estar;
+};
+xmlhttp.open("GET", "http://52.72.219.6:44301/Api/v1/ServiceCards/cdf32b792b4d43b987c5f6a193ccad1b", true);
+xmlhttp.send();
+</script>
+
+
+
+
+
+
+
+<div id="main-wrap">
+  <div id="m-title">Loading...</div>
+  <div class="rated" id="rated">
+  	<p id="movies-r-e"></p>
+	<p id="movies-r-f"></p>
+  	<p id="rated-counter"></p>
+  </div>
+  <div class="s-wrap">
+ 	 	<div class="save"></div>
+ 	 	<div class="share"></div>
+ 	 </div>
+  <div class="img-here" id="img-here">
+  </div>
+  <div class="logo-icon-wrap">
+  	<div class="icon-logo" id="icon-logo"></div>
+  	<div id="icon-desc"><strong id="sp-name"></strong><span id="added-by">Added this Service Card 4 months ago</span></div>
+  </div>
+  <!-- <div id="m-desc"></div> -->
+  <div id="shared"><span id="shared-person"></span><span id="shared-by"></span></div>
+  <div id="c-t-wrap">
+  	<span class="price" id="price"></span>
+  	<span class="ico-n"><a href="" id="ico-n"><img src="icons.jpg"></a></span>
+  	<span id="c-t"><a href="" class="r-m" id="r-m"><img src="chat.jpg"></a></span>
+  </div>
+</div>
+
+
